@@ -191,8 +191,18 @@ namespace KoboldKompanion
 
                 currentImage = Resources.Base; //reset anim just in case
 
-                currentAction = ActionState.Rest;
-                Sit();
+                if(Location.X + Size.Width > Screen.GetWorkingArea(Location).Right 
+                    || Location.X - Size.Width < Screen.GetWorkingArea(Location).Left)
+                {
+                    Wander();
+                }
+                else
+                {
+                    currentAction = ActionState.Rest;
+                    Sit();
+                }
+
+                
                 /*if(waitFlag)
                 {
                     Wander(); //wander
