@@ -1,0 +1,13 @@
+D:\Dominic\PersonalProjects\KoboldKompanion\KoboldKompanion\bin\Debug\KoboldKompanion.exe.config
+D:\Dominic\PersonalProjects\KoboldKompanion\KoboldKompanion\bin\Debug\KoboldKompanion.exe
+D:\Dominic\PersonalProjects\KoboldKompanion\KoboldKompanion\bin\Debug\KoboldKompanion.pdb
+D:\Dominic\PersonalProjects\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.csproj.AssemblyReference.cache
+D:\Dominic\PersonalProjects\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.csproj.SuggestedBindingRedirects.cache
+D:\Dominic\PersonalProjects\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.Properties.Resources.resources
+D:\Dominic\PersonalProjects\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.csproj.GenerateResource.cache
+D:\Dominic\PersonalProjects\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.csproj.CoreCompileInputs.cache
+D:\Dominic\PersonalProjects\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.exe
+D:\Dominic\PersonalProjects\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.pdb
+D:\Dominic\PersonalProjects\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.CharacterBack.resources
+D:\Dominic\PersonalProjects\KoboldKompanion\KoboldKompanion\bin\Debug\System.Numerics.Vectors.dll
+D:\Dominic\PersonalProjects\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.csproj.CopyComplete
