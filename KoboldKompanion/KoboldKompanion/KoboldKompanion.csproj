@@ -104,5 +104,14 @@
   <ItemGroup>
     <None Include="Resources\Tobi\Sit2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tobi\sleep1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tobi\sleep2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tobi\sleep3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

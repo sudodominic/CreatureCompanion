@@ -54,12 +54,17 @@ namespace KoboldKompanion
 
         private void TmrAnimation_Tick(object sender, EventArgs e)
         {
-
-            //do nothing for now
-            //in the future, this will drive the animation, picking each sprite depending on the action
+            //drive the animation, picking each sprite depending on the action
             //for now, it does nothing
             //Trace.WriteLine($"Creature Location: ({Location.X},{Location.Y})");
             imgCharacter.Image = creature.currentImage;
+
+            if(creature.interactionFlag)
+            {
+                creature.tmrTimeOut.Stop();
+                creature.tmrTimeOut.Start();
+                creature.interactionFlag = false; //reset the timer
+            }
 
             if (!mouseDown)
             {
@@ -155,6 +160,8 @@ namespace KoboldKompanion
             lastLocation = e.Location;
             cursorPos = Cursor.Position;
             prevCursorPos= cursorPos;
+
+            creature.interactionFlag = true;
         }
 
         private void imgCharacter_MouseClick(object sender, MouseEventArgs e)

@@ -29,7 +29,9 @@ namespace KoboldKompanion
         private Timer tmrAction = new Timer(); //random action tracker
         private Timer tmrWait = new Timer();
         private Timer tmrNewImage = new Timer(); //cycle image
-        private bool waitFlag = false;
+        public Timer tmrTimeOut = new Timer();
+        // private bool waitFlag = false; //DEPRECATED 
+        public bool interactionFlag = true; //has the user interacted with the creature?
 
 
 
@@ -48,33 +50,40 @@ namespace KoboldKompanion
         {  //Action that the creature is currently preforming
             Wander,
             Rest,
-            Climb,
             Sleep,
-            
         }
 
         public Creature()
         {
 
             tmrAction.Interval = 60000;//good question, how long should this be? (we will start at 1min?)
-            tmrAction.Enabled = true;
             tmrAction.Tick += TmrAction_Tick;
             tmrAction.Start();
 
             tmrWait.Interval = 20000; //20 seconds
-            tmrWait.Enabled = true;
             tmrWait.Tick += TmrWait_Tick;
             //tmrWait.Start();
 
-            tmrNewImage.Enabled = true;
             tmrNewImage.Interval = 100; //1/10 second
             tmrNewImage.Tick += TmrNewImage_Tick;
             tmrNewImage.Start();
+
+            tmrTimeOut.Interval = 300000; //300000 ~about 5 minutes will be the timeout
+            tmrTimeOut.Tick += TmrTimeOut_Tick;
+            tmrTimeOut.Start();
 
             isFalling = false;
 
             currentAction = ActionState.Rest;
             //testing actions
+        }
+
+        private void TmrTimeOut_Tick(object sender, EventArgs e)
+        {
+            //set action to sleep
+            currentAction= ActionState.Sleep;
+            Sleep();
+            tmrTimeOut.Stop();
         }
 
         private void TmrNewImage_Tick(object sender, EventArgs e)
@@ -122,7 +131,6 @@ namespace KoboldKompanion
              * REST: The creature will sit on the taskbar/window and rest
              * more actions will likely follow
              */
-
              currentAction = (ActionState)rand.Next(0,2); //will be more
             //currentAction = ActionState.Rest;
 
@@ -134,6 +142,10 @@ namespace KoboldKompanion
             else if(currentAction == ActionState.Rest)
             {
                 Sit();
+            }
+            else if(currentAction == ActionState.Sleep)
+            {
+                Sleep();
             }
             else
             {
@@ -220,7 +232,8 @@ namespace KoboldKompanion
         /// </summary>
         public void Wander()
         {
-
+            tmrTimeOut.Start();
+            tmrAction.Interval = 60000;
             tmrNewImage.Interval = 100;
             SetWalkAnim(currentImages);
 
@@ -233,15 +246,24 @@ namespace KoboldKompanion
 
         public void Sit()
         {
+            tmrAction.Interval = 60000;
             tmrNewImage.Interval = 2000;
             SetSitAnim(currentImages);
+        }
+
+        public void Sleep()
+        {
+            tmrNewImage.Interval = 1000; //3 seconds for each breath
+            tmrAction.Interval = (int)1.8e6; //should be about 30mins?
+
+            SetSleepAnim(currentImages);
+
         }
 
         public void SetWalkAnim(List<Image> images)
         {
             images.Clear();
             //fill images with walking animation
-            Trace.WriteLine($"Walk set");
             images.Add(Resources.Base);
             images.Add(Resources.walk1);
             images.Add(Resources.walk2);
@@ -277,10 +299,22 @@ namespace KoboldKompanion
                 images.ForEach(x => x.RotateFlip(RotateFlipType.RotateNoneFlipX));
             }
 
+        }
+
+        public void SetSleepAnim(List<Image> images)
+        {
+            images.Clear();
+            images.Add(Resources.sleep1);
+            images.Add(Resources.sleep2);
+            images.Add(Resources.sleep3);
+
+            if (imageFlipped)
+            {
+                images.ForEach(x => x.RotateFlip(RotateFlipType.RotateNoneFlipX));
+            }
 
         }
 
-        
 
     }
 }
