@@ -64,6 +64,7 @@ namespace KoboldKompanion
             tmrWait.Interval = 20000; //20 seconds
             tmrWait.Enabled = true;
             tmrWait.Tick += TmrWait_Tick;
+            //tmrWait.Start();
 
             tmrNewImage.Enabled = true;
             tmrNewImage.Interval = 100; //1/10 second
@@ -96,17 +97,19 @@ namespace KoboldKompanion
             {
                 currentImages.ForEach(x => x.RotateFlip(RotateFlipType.RotateNoneFlipX));
                 imageFlipped = true;
+                Trace.WriteLine($"Image Flipped");
             }
             else if (direction < 0 && imageFlipped)
             {
                 currentImages.ForEach(x => x.RotateFlip(RotateFlipType.RotateNoneFlipX));
                 imageFlipped = false;
+                Trace.WriteLine($"Image UnFlipped");
             }
         }
 
         private void TmrWait_Tick(object sender, EventArgs e)
         {
-           waitFlag = true;
+           //waitFlag = true; Removed, for better AI
         }
 
         private void TmrAction_Tick(object sender, EventArgs e)
@@ -119,7 +122,6 @@ namespace KoboldKompanion
              * REST: The creature will sit on the taskbar/window and rest
              * more actions will likely follow
              */
-            tmrWait.Stop();
 
              currentAction = (ActionState)rand.Next(0,2); //will be more
             //currentAction = ActionState.Rest;
@@ -127,13 +129,11 @@ namespace KoboldKompanion
             //wander around, do a silly
             if (currentAction == ActionState.Wander) 
             {
-                
                 Wander();
             }
             else if(currentAction == ActionState.Rest)
             {
-                SetSitAnim(currentImages);
-                tmrNewImage.Interval = 2000;
+                Sit();
             }
             else
             {
@@ -188,14 +188,16 @@ namespace KoboldKompanion
             else
             {
                 Location.X = currentTarget.X; //rest for a bit, then wander
-                
-                SetIdleAnim(currentImages);
 
-                if(waitFlag)
+                currentImage = Resources.Base; //reset anim just in case
+
+                currentAction = ActionState.Rest;
+                Sit();
+                /*if(waitFlag)
                 {
                     Wander(); //wander
                     waitFlag = false;
-                }
+                }*/ //Removed for potentially better AI
                     
             }
 
@@ -208,10 +210,10 @@ namespace KoboldKompanion
         /// </summary>
         public void Wander()
         {
-            tmrWait.Start();
 
             tmrNewImage.Interval = 100;
             SetWalkAnim(currentImages);
+
             var screens = Screen.AllScreens;
             Screen p = screens[rand.Next(0, screens.Count())];
 
@@ -219,19 +221,36 @@ namespace KoboldKompanion
             //yes I am picking Y values, I dont know what to do with them yet. 
         }
 
+        public void Sit()
+        {
+            tmrNewImage.Interval = 2000;
+            SetSitAnim(currentImages);
+        }
+
         public void SetWalkAnim(List<Image> images)
         {
             images.Clear();
             //fill images with walking animation
+            Trace.WriteLine($"Walk set");
             images.Add(Resources.Base);
             images.Add(Resources.walk1);
             images.Add(Resources.walk2);
+
+            if(imageFlipped)
+            {
+                images.ForEach(x => x.RotateFlip(RotateFlipType.RotateNoneFlipX));
+            }
         }
 
         public void SetIdleAnim(List<Image> images)
         {
             images.Clear();
             images.Add(Resources.Base);
+
+            if (imageFlipped)
+            {
+                images.ForEach(x => x.RotateFlip(RotateFlipType.RotateNoneFlipX));
+            }
         }
 
         public void SetSitAnim(List<Image> images)
@@ -242,6 +261,13 @@ namespace KoboldKompanion
             images.Add(Resources.Sit2);
             images.Add(Resources.Sit);
             images.Add(Resources.Sit);
+
+            if (imageFlipped)
+            {
+                images.ForEach(x => x.RotateFlip(RotateFlipType.RotateNoneFlipX));
+            }
+
+
         }
 
         
