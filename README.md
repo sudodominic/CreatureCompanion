@@ -7,7 +7,7 @@ The goal here is to create a Tamagotchi-like experience that isnt disruptive fro
 
 **WARNING**
 
-There is currently no executable, as it is not in a finished state. There is a lot more in regards to documentation and efficency I need to do before I will create an executable
+There is currently no executable, as it is not in a finished state. There is a lot more in regards to documentation and efficiency I need to do before I will create an executable
 
 # Current Features
 
