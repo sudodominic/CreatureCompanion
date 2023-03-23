@@ -17,6 +17,7 @@ namespace KoboldKompanion
         //handle mouse drag
         private bool mouseDown = false;
         private Point lastLocation;
+        private bool isDrag = false;
         
         Timer tmrAnimation = new Timer();
 
@@ -128,7 +129,7 @@ namespace KoboldKompanion
         private void CharacterBack_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown= false;
-
+            isDrag= false; 
             //reset position if wrong
             //need to add different rules if resting
             if (Location.Y + Size.Height > Screen.GetWorkingArea(Location).Bottom + 50)
@@ -153,6 +154,7 @@ namespace KoboldKompanion
 
                 prevCursorPos = cursorPos;
 
+                isDrag = true;
             }
         }
 
@@ -170,11 +172,13 @@ namespace KoboldKompanion
         private void imgCharacter_MouseClick(object sender, MouseEventArgs e)
         {
             //pet! will summon a heart emoji
-            heart = new petHeart(Location);
-            
-            heart.Show();
+            if(!isDrag || e.Clicks > 1)
+            {
+                heart = new petHeart(Location);
 
-
+                heart.Show();
+            }
+           
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
