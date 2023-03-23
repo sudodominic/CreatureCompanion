@@ -5,6 +5,10 @@
  Creature Companion is an idea I've had for a while, a little creature that hangs out on your desktop. Much like the "compainions" of old, but much less data-mining and invasive. 
 The goal here is to create a Tamagotchi-like experience that isnt disruptive from day to day work. Purely a design choice for your desktop
 
+**WARNING**
+
+There is currently no executable, as it is not in a finished state. There is a lot more in regards to documentation and efficency I need to do before I will create an executable
+
 # Current Features
 
 These are the features that are currently implemented:
