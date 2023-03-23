@@ -38,3 +38,17 @@ C:\Users\dlucas9\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompan
 C:\Users\dlucas9\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.csproj.CopyComplete
 C:\Users\dlucas9\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.exe
 C:\Users\dlucas9\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.pdb
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\bin\Debug\KoboldKompanion.exe.config
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\bin\Debug\KoboldKompanion.exe
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\bin\Debug\KoboldKompanion.pdb
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.csproj.AssemblyReference.cache
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.csproj.SuggestedBindingRedirects.cache
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.CharacterBack.resources
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.petHeart.resources
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.Properties.Resources.resources
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.csproj.GenerateResource.cache
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.csproj.CoreCompileInputs.cache
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.csproj.CopyComplete
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.exe
+C:\Users\black\Documents\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.pdb
