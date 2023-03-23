@@ -51,6 +51,8 @@
             this.Controls.Add(this.imgHeart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "petHeart";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "petHeart";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.SystemColors.Control;

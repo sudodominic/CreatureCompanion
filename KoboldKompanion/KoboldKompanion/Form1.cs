@@ -129,7 +129,7 @@ namespace KoboldKompanion
         private void CharacterBack_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown= false;
-            isDrag= false; 
+            isDrag = false;
             //reset position if wrong
             //need to add different rules if resting
             if (Location.Y + Size.Height > Screen.GetWorkingArea(Location).Bottom + 50)
@@ -142,7 +142,7 @@ namespace KoboldKompanion
         {
             cursorPos = Cursor.Position;
 
-            if (mouseDown) //dont do anything unless we are dragging
+            if (mouseDown && cursorPos != prevCursorPos) //dont do anything unless we are dragging
             {
                 this.Location = new Point((this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
                 Update();
@@ -153,7 +153,6 @@ namespace KoboldKompanion
                 velY = (cursorPos.Y - prevCursorPos.Y) / 0.5;
 
                 prevCursorPos = cursorPos;
-
                 isDrag = true;
             }
         }
@@ -165,19 +164,19 @@ namespace KoboldKompanion
             lastLocation = e.Location;
             cursorPos = Cursor.Position;
             prevCursorPos= cursorPos;
-
+            isDrag = false;
             creature.interactionFlag = true;
         }
 
         private void imgCharacter_MouseClick(object sender, MouseEventArgs e)
         {
+            Trace.WriteLine(isDrag);
             //pet! will summon a heart emoji
-            if(!isDrag || e.Clicks > 1)
-            {
-                heart = new petHeart(Location);
+            if (isDrag)
+                return;
+            heart = new petHeart(Location);
 
-                heart.Show();
-            }
+            heart.Show();
            
         }
 
