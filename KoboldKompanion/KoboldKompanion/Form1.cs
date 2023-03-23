@@ -111,11 +111,7 @@ namespace KoboldKompanion
                     }
                 }
 
-                //handle resting??
-                if(creature.currentAction == Creature.ActionState.Rest && !creature.isFalling)
-                {
-                   //resting code
-                }
+                
             }
 
 

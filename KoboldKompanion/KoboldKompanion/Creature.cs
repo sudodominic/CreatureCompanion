@@ -14,9 +14,9 @@ using System.Numerics;
 namespace KoboldKompanion
 {
     internal class Creature
-    {
+    { 
         static private Random rand = new Random(); //random for picking shit
-
+           
         public Image currentImage = Resources.Base; //the current image to render
         List<Image> currentImages = new List<Image>();
         int imageAnimTrack = 0;
@@ -24,7 +24,7 @@ namespace KoboldKompanion
         bool imageFlipped = false;
         int direction; //left is -1, 1 is right
 
-        private Point currentTarget; //THIS IS A TEST POINT, PLEASE REMOVE
+        private Point currentTarget; 
 
         private Timer tmrAction = new Timer(); //random action tracker
         private Timer tmrWait = new Timer();
