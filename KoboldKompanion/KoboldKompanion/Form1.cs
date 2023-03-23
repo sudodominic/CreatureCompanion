@@ -30,6 +30,9 @@ namespace KoboldKompanion
         Point cursorPos;
         Point prevCursorPos;
 
+        //heart attempt
+        petHeart heart;
+
         public CharacterBack()
         { 
             InitializeComponent();
@@ -166,7 +169,12 @@ namespace KoboldKompanion
 
         private void imgCharacter_MouseClick(object sender, MouseEventArgs e)
         {
-            //pet? feed?
+            //pet! will summon a heart emoji
+            heart = new petHeart(Location);
+            
+            heart.Show();
+
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

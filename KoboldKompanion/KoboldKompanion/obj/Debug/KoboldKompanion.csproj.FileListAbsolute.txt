@@ -24,3 +24,4 @@ D:\Dominic\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\Ko
 D:\Dominic\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.csproj.CopyComplete
 D:\Dominic\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.exe
 D:\Dominic\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.pdb
+D:\Dominic\GitHub\CreatureCompanion\KoboldKompanion\KoboldKompanion\obj\Debug\KoboldKompanion.petHeart.resources
