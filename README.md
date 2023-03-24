@@ -29,6 +29,12 @@ These are the features that are currently implemented:
 
 -Throw: You can "throw" the creature with your mouse. I dont know why you would but, you can. Dont worry about them going off screen, they will wander back on
 
+
+
+
+https://user-images.githubusercontent.com/102329477/227412464-eb56fcbd-a316-4844-855b-820887c7f06e.mp4
+
+
 # Roadmap
 
 Features I plan to implement in the future:
