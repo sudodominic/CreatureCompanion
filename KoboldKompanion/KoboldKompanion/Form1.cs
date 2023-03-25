@@ -146,12 +146,15 @@ namespace KoboldKompanion
         private void CharacterBack_MouseMove(object sender, MouseEventArgs e)
         {
             cursorPos = Cursor.Position;
+            Trace.WriteLine($"({e.X},{e.Y})");
 
             if (mouseDown && cursorPos != prevCursorPos) //dont do anything unless we are dragging
             {
                 creature.currentAction = Creature.ActionState.Grabbed;
 
-                this.Location = new Point((this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+                //if creature is grabbed, lets put it where the mouse is (32, 20)
+
+                this.Location = new Point(cursorPos.X - this.Width/2, cursorPos.Y - this.Height/3);
                 Update();
 
                 //velocity calcs? v=d/t
