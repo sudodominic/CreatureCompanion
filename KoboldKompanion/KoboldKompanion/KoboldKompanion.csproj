@@ -17,7 +17,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -123,10 +123,10 @@
     <None Include="Resources\Tobi\sleep3.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\heart.bmp" />
+    <None Include="Resources\heart.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\heart.png" />
+    <None Include="Resources\Tobi\grabbed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

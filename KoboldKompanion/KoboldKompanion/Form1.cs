@@ -100,6 +100,11 @@ namespace KoboldKompanion
                     {
                         Location = creature.Move(Location, Size); //make sure to pass in the location and size of the form
                     }
+                    else if(creature.currentAction == Creature.ActionState.Grabbed)
+                    {
+                        creature.currentAction = Creature.ActionState.Wander;
+                        creature.Wander();
+                    }
 
                     if(Location.X > Screen.GetWorkingArea(Location).Right + Size.Width * 2) //if creature is off screen, bring him back
                     {
@@ -112,6 +117,10 @@ namespace KoboldKompanion
                 }
 
                 
+            }
+            else if(creature.currentAction == Creature.ActionState.Grabbed)
+            {
+                creature.Grabbed();
             }
 
 
@@ -140,6 +149,8 @@ namespace KoboldKompanion
 
             if (mouseDown && cursorPos != prevCursorPos) //dont do anything unless we are dragging
             {
+                creature.currentAction = Creature.ActionState.Grabbed;
+
                 this.Location = new Point((this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
                 Update();
 

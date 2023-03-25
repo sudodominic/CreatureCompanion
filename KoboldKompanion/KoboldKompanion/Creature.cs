@@ -51,6 +51,7 @@ namespace KoboldKompanion
             Wander,
             Rest,
             Sleep,
+            Grabbed
         }
 
         public Creature()
@@ -146,6 +147,10 @@ namespace KoboldKompanion
             else if(currentAction == ActionState.Sleep)
             {
                 Sleep();
+            }
+            else if(currentAction == ActionState.Grabbed)
+            {
+                Grabbed();
             }
             else
             {
@@ -244,6 +249,9 @@ namespace KoboldKompanion
             //yes I am picking Y values, I dont know what to do with them yet. 
         }
 
+        /// <summary>
+        /// Do the sit
+        /// </summary>
         public void Sit()
         {
             tmrAction.Interval = 60000;
@@ -251,6 +259,9 @@ namespace KoboldKompanion
             SetSitAnim(currentImages);
         }
 
+        /// <summary>
+        /// sleep for 30 minutes
+        /// </summary>
         public void Sleep()
         {
             tmrNewImage.Interval = 1000; //3 seconds for each breath
@@ -260,6 +271,15 @@ namespace KoboldKompanion
 
         }
 
+        public void Grabbed()
+        {
+            SetGrabAnim(currentImages);
+        }
+
+        /// <summary>
+        /// set up walking animations
+        /// </summary>
+        /// <param name="images"></param>
         public void SetWalkAnim(List<Image> images)
         {
             images.Clear();
@@ -274,6 +294,10 @@ namespace KoboldKompanion
             }
         }
 
+        /// <summary>
+        /// set up idle animation
+        /// </summary>
+        /// <param name="images"></param>
         public void SetIdleAnim(List<Image> images)
         {
             images.Clear();
@@ -285,6 +309,10 @@ namespace KoboldKompanion
             }
         }
 
+        /// <summary>
+        /// set up sitting animation
+        /// </summary>
+        /// <param name="images"></param>
         public void SetSitAnim(List<Image> images)
         {
             images.Clear();
@@ -301,6 +329,10 @@ namespace KoboldKompanion
 
         }
 
+        /// <summary>
+        /// set up sleeping animation
+        /// </summary>
+        /// <param name="images"></param>
         public void SetSleepAnim(List<Image> images)
         {
             images.Clear();
@@ -313,6 +345,21 @@ namespace KoboldKompanion
                 images.ForEach(x => x.RotateFlip(RotateFlipType.RotateNoneFlipX));
             }
 
+        }
+
+        /// <summary>
+        /// Set up grabbed animation
+        /// </summary>
+        /// <param name="images"></param>
+        public void SetGrabAnim(List<Image> images)
+        {
+            images.Clear();
+            images.Add(Resources.grabbed);
+
+            if(imageFlipped)
+            {
+                images.ForEach(x => x.RotateFlip(RotateFlipType.RotateNoneFlipX));
+            }
         }
 
 
