@@ -39,10 +39,6 @@ https://user-images.githubusercontent.com/102329477/227412464-eb56fcbd-a316-4844
 
 Features I plan to implement in the future:
 
--Falling animation
-
--Picked-Up animation
-
 -"In Between" animations: animations between states
 
 -Feeding/Providing treats 
@@ -50,4 +46,6 @@ Features I plan to implement in the future:
 -Custom Creatures: Ideally I want to refactor the code so that implementing your own creatures and selecting them from a menu is quick, and easy
 
 
-Like what you see? Consider donating, it encourages me to work on more projects, and ensures I can feed myself while I work on them https://ko-fi.com/sudodominic
+Like what you see? 
+Consider donating, it encourages me to work on more projects, and ensures I can feed myself while I work on them 
+https://ko-fi.com/sudodominic
