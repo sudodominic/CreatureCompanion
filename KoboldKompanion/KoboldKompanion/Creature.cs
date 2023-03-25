@@ -171,9 +171,12 @@ namespace KoboldKompanion
         {
             if(Screen.GetWorkingArea(Location).Bottom - 20 > Location.Y + Size.Height)
             {
+                SetFallAnim(currentImages);
+
                 isFalling = true;
                 fallSpeed += fallRate ;
                 Location.Y += fallSpeed + additionalFallspeed > 60 ? 60 : fallSpeed; //arb pick. allowing for gravitys
+
             }
             else
             {
@@ -357,6 +360,17 @@ namespace KoboldKompanion
             images.Add(Resources.grabbed);
 
             if(imageFlipped)
+            {
+                images.ForEach(x => x.RotateFlip(RotateFlipType.RotateNoneFlipX));
+            }
+        }
+
+        public void SetFallAnim(List<Image> images)
+        {
+            images.Clear();
+            images.Add(Resources.fall);
+
+            if (imageFlipped)
             {
                 images.ForEach(x => x.RotateFlip(RotateFlipType.RotateNoneFlipX));
             }

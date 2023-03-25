@@ -128,5 +128,8 @@
   <ItemGroup>
     <None Include="Resources\Tobi\grabbed.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tobi\fall.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
