@@ -48,3 +48,6 @@ Features I plan to implement in the future:
 -Feeding/Providing treats 
 
 -Custom Creatures: Ideally I want to refactor the code so that implementing your own creatures and selecting them from a menu is quick, and easy
+
+
+Like what you see? Consider donating, it encourages me to work on more projects, and ensures I can feed myself while I work on them https://ko-fi.com/sudodominic
